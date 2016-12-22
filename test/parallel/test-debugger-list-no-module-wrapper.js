@@ -31,12 +31,12 @@ proc.stdout.on('data', (data) => {
   }
 
   if (!sentEmpty) {
-    setImmediate(() => {proc.stdin.write('list(10)\n');});
+    setImmediate(() => { proc.stdin.write('list(10)\n'); });
     sentEmpty = true;
     return;
   }
   if (!sentExit && sentCommand && sentEmpty) {
-    setImmediate(() => {proc.stdin.write('\n\n\n.exit\n\n\n');});
+    setImmediate(() => { proc.stdin.write('\n\n\n.exit\n\n\n'); });
     sentExit = true;
     return;
   }
